@@ -3,17 +3,17 @@ package com.shiva.diceapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var randomNumberTxt : TextView
+    lateinit var diceOneImg : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        randomNumberTxt = findViewById<TextView>(R.id.text_view_random_number)
+        diceOneImg = findViewById(R.id.diceOne)
 
         val rollButton = findViewById<Button>(R.id.btn_roll_dice)
 
@@ -27,7 +27,17 @@ class MainActivity : AppCompatActivity() {
     fun rollDice() {
 
         val randomNumber = (1..6).random()
-        randomNumberTxt.text = randomNumber.toString()
+
+        val image = when(randomNumber){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.dice_empty
+        }
+        diceOneImg.setImageResource(image)
 
     }
 }
