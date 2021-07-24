@@ -2,7 +2,11 @@
     <string name="app_name">Roll The Dice</string>
     <string name="str_one">1</string>
     <string name="str_roll">Roll The Dice</string>
-    <string name="str_img_des">This is image of dice</string>
+    <string name="str_img_desc_one">This is image of dice</string>
+    <string name="str_img_desc_two">This is image of dice</string>
+
+    <string name="str_total_txt">Total number :-    </string>
+
 
 
 </resources>
